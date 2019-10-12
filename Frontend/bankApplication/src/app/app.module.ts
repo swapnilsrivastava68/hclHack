@@ -29,6 +29,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { LoginComponent } from './component/login/login.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MatMenuModule } from '@angular/material/menu';
     AppComponent,
     MainNavComponent,
     MainTableComponent,
-    MainDashboardComponent
+    MainDashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
