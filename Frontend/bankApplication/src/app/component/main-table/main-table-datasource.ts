@@ -7,31 +7,26 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 // TODO: Replace this with your own data model type
 export interface MainTableItem {
   name: string;
-  id: number;
+  id: string;
+  amount: number,
+  date: Date,
+  type: string,
+  message: string,
+  // account_summary: string
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: MainTableItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+  { id: 'gs12376723', name: 'Sachin', amount: 1223.45, date: new Date(12/10/2019), type: 'Credit', message: 'Tranfer to self',  },
+  { id: 'gs12376723', name: 'Sachin', amount: 1223.45, date: new Date(12/10/2019), type: 'Credit', message: 'Tranfer to self',  },
+  { id: 'gs12376723', name: 'Sachin', amount: 1223.45, date: new Date(12/10/2019), type: 'Credit', message: 'Tranfer to self',  },
+  { id: 'gs12376723', name: 'Sachin', amount: 1223.45, date: new Date(12/10/2019), type: 'Credit', message: 'Tranfer to self',  },
+  { id: 'gs12376723', name: 'Sachin', amount: 1223.45, date: new Date(12/10/2019), type: 'Credit', message: 'Tranfer to self',  },
+  { id: 'gs12376723', name: 'Sachin', amount: 1223.45, date: new Date(12/10/2019), type: 'Credit', message: 'Tranfer to self',  },
+  { id: 'gs12376723', name: 'Sachin', amount: 1223.45, date: new Date(12/10/2019), type: 'Credit', message: 'Tranfer to self',  },
+  { id: 'gs12376723', name: 'Sachin', amount: 1223.45, date: new Date(12/10/2019), type: 'Credit', message: 'Tranfer to self',  },
+  { id: 'gs12376723', name: 'Sachin', amount: 1223.45, date: new Date(12/10/2019), type: 'Credit', message: 'Tranfer to self',  },
+
 ];
 
 /**
@@ -71,7 +66,7 @@ export class MainTableDataSource extends DataSource<MainTableItem> {
    *  Called when the table is being destroyed. Use this function, to clean up
    * any open connections or free any held resources that were set up during connect.
    */
-  disconnect() {}
+  disconnect() { }
 
   /**
    * Paginate the data (client-side). If you're using server-side pagination,
@@ -96,6 +91,10 @@ export class MainTableDataSource extends DataSource<MainTableItem> {
       switch (this.sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'date': return compare(+a.date, +b.date, isAsc);
+        case 'amount': return compare(+a.amount, +b.amount, isAsc);
+        case 'type': return compare(+a.type, +b.type, isAsc);
+        case 'message': return compare(+a.message, +b.message, isAsc);
         default: return 0;
       }
     });
