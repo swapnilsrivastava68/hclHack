@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-login',
@@ -18,10 +19,27 @@ export class LoginComponent {
       }
 
       return [
-        { title: 'Login', cols: 2, rows: 1 },
+        { title: 'Login', cols: 1, rows: 1 },
       ];
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private sharedService: SharedService
+    ) {
+
+    }
+
+  login(event) {
+    console.log('login');
+
+    const userInfo = {
+      user: 'swapnilsrivastava68@gmail.com',
+      password: 'Hello'
+    };
+
+    const { user, password } = userInfo;
+    this.sharedService.loginService(user, password)
+  }
 }

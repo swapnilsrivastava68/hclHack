@@ -1,17 +1,29 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Login</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+  <!-- <mat-grid-list cols="2" rowHeight="250px"> -->
+    <!-- <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows"> -->
       <mat-card class="dashboard-card">
         <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-          </mat-card-title>
+            <h1>Login</h1>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <div>
+              <form class="example-form" (ngSubmit)="login($event)">
+                <div fxLayout="column" fxLayoutAlign="center center" >
+                  <mat-form-field>
+                    <input matInput placeholder="Email" value="">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Password" value="">
+                  </mat-form-field>
+                  <div>
+                      <!-- <button mat-raised-button color="primary" disabled>Go to Sign up</button> -->
+                      <button mat-raised-button color="primary" type="submit" >Login</button>
+                  </div>
+                </div>
+              </form>
+          </div>
         </mat-card-content>
       </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+    <!-- </mat-grid-tile> -->
+  <!-- </mat-grid-list> -->
 </div>

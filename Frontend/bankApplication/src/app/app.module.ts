@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Angular Flex Layout Module Beta
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -20,6 +22,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -35,7 +40,6 @@ import { LoginComponent } from './component/login/login.component';
 import { AuthGuardGuard } from './guard/auth-guard.guard';
 import { SharedService } from './services/shared.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +50,8 @@ import { SharedService } from './services/shared.service';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
@@ -61,7 +67,9 @@ import { SharedService } from './services/shared.service';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     AuthGuardGuard,
