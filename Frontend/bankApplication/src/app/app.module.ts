@@ -33,6 +33,7 @@ import { LoginComponent } from './component/login/login.component';
 
 // Auth Guard
 import { AuthGuardGuard } from './guard/auth-guard.guard';
+import { SharedService } from './services/shared.service';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { AuthGuardGuard } from './guard/auth-guard.guard';
     MatTabsModule
   ],
   providers: [
-    AuthGuardGuard
+    AuthGuardGuard,
+    SharedService
   ],
   bootstrap: [AppComponent]
 })
