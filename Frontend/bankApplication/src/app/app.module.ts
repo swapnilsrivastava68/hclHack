@@ -31,6 +31,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { LoginComponent } from './component/login/login.component';
 
+// Auth Guard
+import { AuthGuardGuard } from './guard/auth-guard.guard';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +62,9 @@ import { LoginComponent } from './component/login/login.component';
     MatMenuModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [
+    AuthGuardGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

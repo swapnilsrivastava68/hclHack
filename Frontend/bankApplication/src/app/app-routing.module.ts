@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './component/login/login.component';
 import { MainNavComponent } from './component/main-nav/main-nav.component';
+import { AuthGuardGuard } from './guard/auth-guard.guard';
 
 const routes: Routes = [
-  { path: '', component: MainNavComponent},
+  { path: '', component: MainNavComponent, canActivate: [AuthGuardGuard]},
   { path: 'login', component: LoginComponent},
 ];
 
